@@ -210,7 +210,7 @@ def flatten(text):
             continue 
 
         l = l.replace("\t", " ")
-        tokens += filter(lambda x: len(x) > 0, l.split(" ")) + ['']
+        tokens += [x for x in l.split(" ") if len(x) > 0] + ['']
 
     # find (...) and turn it into a single line ("capture" it)
     capturing = False
